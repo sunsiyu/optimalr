@@ -1,0 +1,12 @@
+Package: optimalr
+Title: Understand and Solve Optimization Problems
+Version: 0.0.0.9000
+Authors@R: person("Siyu", "Sun", email = "sunsiyu.tud@gmail.com", role = c("aut", "cre"))
+Description: This package contains functions to understand and solve optimization 
+  problems, can be used as a 'sub-packge' for other numerical problems
+Depends: R (>= 3.2.2)
+License: GPL-3
+LazyData: true
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

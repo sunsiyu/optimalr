@@ -1,0 +1,62 @@
+---
+title: "Measurement of Error"
+author: "Siyu Sun"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+## Simplest Case
+
+Absolute error: $|x - \widehat{x}|$  
+
+But cannot address difference importance of differences in relation to x, thus 
+Relative error:  
+
+$\frac{|x - \widehat{x}|}{|x|}$
+
+For computing convenience, avoid the case x can be non-zero:  
+
+$\frac{|x - \widehat{x}|}{1 + |x|}$
+
+has the property that when $|x|>>1$, similar to relative error; and when 
+$|x| <= 1$, similar to absolute error.
+
+### Plots
+
+```{r plot1, fig.height = 4, fig.width  = 6}
+x <- seq(0, 100, 0.1)
+x_e <- x + rnorm(length(x))
+par(mfrow = c(2,2), mar = c(1,2,1,1))
+plot(x)
+lines(x_e)
+plot(abs(x-x_e), type="l")
+plot(abs(x-x_e)/abs(x), type="l")
+plot(abs(x-x_e)/(1+abs(x)), type="l")
+
+```
+
+
+## Log.
+
+The function that outputs between 0 and 1.
+
+
+```{r plot2, fig.height = 4, fig.width  = 6}
+x1 <- seq(0, 1, 0.01)
+x2 <- seq(0, 100, 0.1)
+y1 <- exp(x1) / (1 + exp(x1))
+y2 <- exp(x2) / (1 + exp(x2))
+par(mfrow = c(2,2), mar = c(1,2,1,1))
+plot(x1, y1)
+plot(x2, y2)
+plot(log(x1), y1)
+plot(log(x2), y2)
+
+```
+
