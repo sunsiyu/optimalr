@@ -1,3 +1,6 @@
+#' @import data.table
+NULL
+
 #' Optimization Snippets for R
 #'
 #' @section Package options:

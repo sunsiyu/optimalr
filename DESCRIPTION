@@ -5,9 +5,12 @@ Authors@R: person("Siyu", "Sun", email = "sunsiyu.tud@gmail.com", role = c("aut"
 Description: This package contains functions to understand and solve optimization 
   problems, can be used as a 'sub-packge' for other numerical problems
 Depends: R (>= 3.2.2)
+Imports:
+  data.table (>= 1.9)
 License: GPL-3
 LazyData: true
-Suggests: knitr,
-    rmarkdown,
-    testthat
+Suggests: 
+  knitr,
+  rmarkdown,
+  testthat
 VignetteBuilder: knitr
