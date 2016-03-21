@@ -37,5 +37,12 @@ dt[, -c("a", "b"), with = F]
 dt[, sum(a)]
 dt[, unique(b)]
 
+## get summary table (long and narrow)
+dt[, .(a,d)][, unique(a), by = d]
+
+## summary table (short and narrow)
+dt2 <- dt[, .(a,d)]
+dt2[, a_d:=list(list(unique(a))), by = d]
+head(dt2)
 
 
