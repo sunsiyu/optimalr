@@ -45,4 +45,9 @@ dt2 <- dt[, .(a,d)]
 dt2[, a_d:=list(list(unique(a))), by = d]
 head(dt2)
 
-
+## Suppressing intermediate output with {}
+dt[, {tmp1 = mean(a)
+      tmp2 = mean(abs(c) - tmp1)
+      tmp3 = round(tmp2, 2)
+      list(tmp2 = tmp2, tmp3 = tmp3)},
+   by = d]
