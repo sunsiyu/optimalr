@@ -51,3 +51,6 @@ dt[, {tmp1 = mean(a)
       tmp3 = round(tmp2, 2)
       list(tmp2 = tmp2, tmp3 = tmp3)},
    by = d]
+
+# shift or lag/leads
+dt[, a_lag := shift(a, 1, type="lead")]
